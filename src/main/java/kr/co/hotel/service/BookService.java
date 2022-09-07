@@ -4,7 +4,9 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.ui.Model;
+
 public interface BookService {
 
-	public void check_restroom(HttpServletRequest request, PrintWriter out);
+	public String check_restroom(HttpServletRequest request, Model model);
 }

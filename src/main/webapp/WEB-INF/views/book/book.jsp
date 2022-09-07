@@ -36,30 +36,10 @@ function check_restroom()
 {
 	var date=document.getElementsByName("daterange")[0].value;
 	var person=document.getElementsByName("person")[0].value;
-	 
-	var chk=new XMLHttpRequest();
-		chk.open("get","check_restroom?date="+date+"&person="+person)
-	    chk.send();
-	    chk.onreadystatechange=function()
-	    {
-	  	   if(chk.readyState==4)
-	  	   {
-			  alert(chk.responseText);
-			  if(chk.responseText=="0")
-			  {
-				  document.getElementById("msg").innerText="사용가능한 아이디 입니다";
-				  document.getElementById("msg").style.color="blue";
-				  uchk=1;
-			  }	  
-			  else
-			  {
-				  document.getElementById("msg").innerText="사용 불가능한 아이디 입니다";
-				  document.getElementById("msg").style.color="red";
-				  uchk=0;
-			  }	  
-		   }	  
-	    }
-	 
+	var newdate.replace(/\s+/g,' ')
+	alert(newdate);
+	
+/* 	location="check_restroom?date="+date+"&person="+person;	 */  
 }
 
 
