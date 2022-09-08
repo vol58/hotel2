@@ -126,10 +126,10 @@ footer {
 			<a href="../mypage/myinfo">회원정보</a> 
  		</c:if>
  		<c:if test="${userid == null }">
-		<a href="../login/login">로그인</a> | <a href="../member/member_input">회원가입</a>
+		<a href="/hotel/login/login">로그인</a> | <a href="/hotel/member/member_input">회원가입</a>
 		</c:if>
 		
-     <a href="../admin/member_list"> 회원들 db </a>
+     <a href="/hotel/admin/member_list"> 회원들 db </a>
 	</div>
 	</header>
 
