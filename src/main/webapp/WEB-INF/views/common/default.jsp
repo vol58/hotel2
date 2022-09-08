@@ -136,7 +136,7 @@ footer {
 	<ul class="menu">
 		<li>공지사항</li>
 		<li>객실소개</li>
-		<li><a href="../book/book">예약하기</a></li>
+		<li><a href="/hotel/book/book">예약하기</a></li>
 		<li>FAQ</li>
 		<li>이용후기</li>
 		<li>호텔 몰</li>

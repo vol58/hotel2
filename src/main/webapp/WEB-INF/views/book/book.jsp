@@ -36,10 +36,12 @@ function check_restroom()
 {
 	var date=document.getElementsByName("daterange")[0].value;
 	var person=document.getElementsByName("person")[0].value;
-	var newdate.replace(/\s+/g,' ')
-	alert(newdate);
+	var newdate=date.replace(/\s+/g,'');
+		newdate=newdate.replace(/[/]/g,'');
+		//alert(newdate);
+
 	
-/* 	location="check_restroom?date="+date+"&person="+person;	 */  
+	location="check_restroom?date="+newdate+"&person="+person; 
 }
 
 
