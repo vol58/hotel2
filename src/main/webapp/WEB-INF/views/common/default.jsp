@@ -135,7 +135,7 @@ footer {
 
 	<nav> <!-- 메뉴및 링크 -->
 	<ul class="menu">
-		<li>공지사항</li>
+		<li><a href="/hotel/notice/notice_list?page=1">공지사항</a></li>
 		<li>객실소개</li>
 		<li><a href="/hotel/book/book">예약하기</a></li>
 		<li>FAQ</li>

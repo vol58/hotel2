@@ -1,8 +1,8 @@
 package kr.co.hotel.vo;
 
 public class NoticeVO {
-	int id, state;
-	String title, content, fname;
+	int id,state,readnum;
+	String title,content,fname,writeday;
 	public int getId() {
 		return id;
 	}
@@ -32,5 +32,17 @@ public class NoticeVO {
 	}
 	public void setFname(String fname) {
 		this.fname = fname;
+	}
+	public String getWriteday() {
+		return writeday;
+	}
+	public void setWriteday(String writeday) {
+		this.writeday = writeday;
+	}
+	public int getReadnum() {
+		return readnum;
+	}
+	public void setReadnum(int readnum) {
+		this.readnum = readnum;
 	}
 }
