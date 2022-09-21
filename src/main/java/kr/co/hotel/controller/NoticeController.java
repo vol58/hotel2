@@ -1,5 +1,7 @@
 package kr.co.hotel.controller;
 
+import java.util.Enumeration;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +36,32 @@ public class NoticeController {
 
 		return service.notice_content(model,request);
 	}
+	@RequestMapping("/notice/notice_write")
+	public String notice_write() {
 
+		return "notice/notice_write";
+	}
+	@RequestMapping("/notice/notice_write_ok")
+	public String notice_write_ok(HttpServletRequest request) {
+
+		return service.notice_write_ok(request);
+	}
+	@RequestMapping("/notice/notice_delete")
+	public String notice_delete(HttpServletRequest request) {
+
+		return service.notice_delete(request);
+	}
+	@RequestMapping("/notice/notice_update")
+	public String notice_update(HttpServletRequest request,Model model) {
+
+		return service.notice_update(request,model);
+	}
+	@RequestMapping("/notice/notice_update_ok")
+	public String notice_update_ok(HttpServletRequest request) {
+
+		return service.notice_update_ok(request);
+	}
+	
 }
 
 

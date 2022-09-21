@@ -140,7 +140,7 @@ footer {
 		<li><a href="/hotel/book/book">예약하기</a></li>
 		<li>FAQ</li>
 		<li>이용후기</li>
-		<li>호텔 몰</li>
+		<li><a href="/hotel/product/pro_write">호텔 몰</a></li>
 		
 	</ul>
 	</nav>

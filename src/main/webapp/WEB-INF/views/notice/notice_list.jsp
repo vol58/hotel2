@@ -101,7 +101,7 @@
         </tr>
         <c:forEach items="${notice_list}" var="nvo">
             <tr>
-                <td><a href="../notice/notice_content?id=${nvo.id}&page=${page}&sel=${sel}&sword=${sword}" style="color:#000;">${nvo.title}</a></td>
+                <td><a href="../notice/notice_readnum?id=${nvo.id}&page=${page}&sel=${sel}&sword=${sword}" style="color:#000;">${nvo.title}</a></td>
                 <td>${nvo.writeday}</td>
                 <td>${nvo.readnum}</td>
             </tr>
@@ -133,7 +133,7 @@
                 </c:if>
               </c:forEach>  
               
-                     <!-- 1페이지 단위 다음 이동 시작-->
+                     <!-- 1페이지  이동 시작-->
          <c:if test="${page != chongpage}">
           <a href="notice_list?page=${page+1}&sel=${sel}&sword=${sword}" class="btn" style="color:#000;"> > </a>
          </c:if>
@@ -153,6 +153,9 @@
               
              </td>
          </tr>
+       <tr>
+         <td colspan="4"> <a href="notice_write">글쓰기</a>
+       </tr>
     </table>
 
 </body>

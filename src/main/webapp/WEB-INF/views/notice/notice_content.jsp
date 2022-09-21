@@ -7,7 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style>
-
+    notice_content {
+        width: 1100px;
+        height: 500px;
+        margin: auto;
+        text-align: center;
+    }
 </style>
 </head>
 <body>
@@ -26,6 +31,13 @@
             <tr>
                 <td colspan="2">${nvo.content}</td>
             </tr>
+
+            //수정 삭제 버튼
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="수정" onclick="location.href='notice_update?id=${nvo.id}'">
+                    <input type="button" value="삭제" onclick="location.href='notice_delete?id=${nvo.id}'">
+                </td>
 
             
         </table>

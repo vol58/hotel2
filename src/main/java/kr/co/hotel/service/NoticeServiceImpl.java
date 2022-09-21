@@ -2,6 +2,7 @@ package kr.co.hotel.service;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import kr.co.hotel.mapper.NoticeMapper;
 import kr.co.hotel.vo.NoticeVO;
@@ -94,4 +98,77 @@ public class NoticeServiceImpl implements NoticeService{
 		model.addAttribute("sword", sword);
 		return "/notice/notice_content";
 	}
+
+	@Override
+	public String notice_write_ok(HttpServletRequest request) {
+		// 라이브러리를 이용하여 폼태그에 값을 가져오기
+		String path=request.getRealPath("/notice/resources/img");
+		int size=1024*1024*20;
+		NoticeVO nvo=new NoticeVO();
+		try
+		{
+		  MultipartRequest multi=new MultipartRequest(request,path,size,"utf-8",new DefaultFileRenamePolicy());
+		  // 폼값 가져오기
+
+		  nvo.setTitle(multi.getParameter("title"));
+		  nvo.setContent(multi.getParameter("content"));
+		  nvo.setFname(multi.getFilesystemName("fname"));
+		  nvo.setState(Integer.parseInt(multi.getParameter("state")));
+		}
+		catch(Exception e)
+		{
+			
+		}
+		
+		mapper.notice_write_ok(nvo);
+		return "redirect:/notice/notice_list?page=1";
+	}
+
+	@Override
+	public String notice_delete(HttpServletRequest request) {
+		String id=request.getParameter("id");
+		mapper.notice_delete(id);
+		return "redirect:/notice/notice_list?page=1";
+	}
+
+	@Override
+	public String notice_update(HttpServletRequest request,Model model) {
+		String id=request.getParameter("id");
+		String page=request.getParameter("page");
+		String sel=request.getParameter("sel");
+		String sword=request.getParameter("sword");
+		sword=URLEncoder.encode(sword);
+		model.addAttribute("nvo", mapper.notice_content(id));
+		model.addAttribute("page", page);
+		model.addAttribute("sel", sel);
+		model.addAttribute("sword", sword);
+		return "/notice/notice_update";
+	}
+
+	@Override
+	public String notice_update_ok(HttpServletRequest request) {
+		// 라이브러리를 이용하여 폼태그에 값을 가져오기
+		String path=request.getRealPath("/notice/resources/img");
+		int size=1024*1024*20;
+		NoticeVO nvo=new NoticeVO();
+		try
+		{
+		  MultipartRequest multi=new MultipartRequest(request,path,size,"utf-8",new DefaultFileRenamePolicy());
+		  // 폼값 가져오기
+
+		  nvo.setTitle(multi.getParameter("title"));
+		  nvo.setContent(multi.getParameter("content"));
+		  nvo.setFname(multi.getFilesystemName("fname"));
+		  nvo.setState(Integer.parseInt(multi.getParameter("state")));
+		}
+		catch(Exception e)
+		{
+			
+		}
+		
+		mapper.notice_update_ok(nvo);
+		return "redirect:/notice/notice_list?page=1";
+	}
+
+	
 }
