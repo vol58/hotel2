@@ -7,6 +7,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <title>Insert title here</title>
  <style>
    section {
@@ -14,13 +19,13 @@
      margin:auto;
    }
    section td {
-     width:270px;
-     height:300px;
-     padding:15px;
+     width:300px;
+     height:250px;
+     padding:10px;
      vertical-align:top;
    }
    section td:hover {
-     border:1px solid #89a1a5;
+     opacity: .5;
    }
    section td div {
      margin-top:5px;
@@ -44,12 +49,10 @@
    section #baeday {
      font-size:12px;
    }
-    h1 {
-        text-align:center;
-        margin:auto;
-        margin-right:20px;
-        display:inline-block;
-    }
+   #container {
+    margin-top:20px;
+   }
+
  </style>
  <script>
    function content_view(pcode)
@@ -59,10 +62,27 @@
  </script>
 </head>
 <body> <!-- pro_list.jsp-->
+    <div class="container">
+  <ul class="nav nav-tabs nav-justified">
+    <li class="nav-item">
+      <a class="nav-link" href="../product/pro_list?pcode=p01">고메</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../product/pro_list?pcode=p02">리빙</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../product/pro_list?pcode=p03">상품권</a>
+    </li>
+  </ul>
+   </div>
+<script>
+$(document).ready(function(){
+  $(".nav-tabs a").click(function(){
+    $(this).tab('show');
+  });
+});
+</script>
     <section> <!-- 상품을 30개 출력 -->
-         <h1> <a href="../product/pro_list?pcode=p01"> 식품 </a> </h1>
-         <h1> <a href="../product/pro_list?pcode=p02"> 리빙 </a> </h1>
-         <h1> <a href="../product/pro_list?pcode=p03"> 상품권 </a> </h1>
         <c:set var="i" value="0"/>
         <table align="center" cellspacing="15">
          <tr>

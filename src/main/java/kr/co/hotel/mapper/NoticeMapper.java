@@ -11,7 +11,6 @@ public interface NoticeMapper {
     public NoticeVO notice_content(String id);
     public void notice_write_ok(NoticeVO nvo);
     public void notice_delete(String id);
-    public NoticeVO notice_update(String id);
     public void notice_update_ok(NoticeVO nvo);
 
 

@@ -23,6 +23,8 @@
   </select>
 
   <select id="pro_content" resultType="kr.co.hotel.vo.ProductVO">
-    select * from product where pcode=#{param1}
+     select * , adddate(curdate(),baeday) as baeday2 ,
+     dayofweek(adddate(curdate(),baeday)) as yoil 
+     from product where pcode=#{param1}
   </select>
 </mapper>

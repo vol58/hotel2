@@ -74,7 +74,7 @@
     }
 </script>
 </head>
-<body>
+<body onload="init()">
     <table id="notice_top"> <td> 공 지 사 항 <td> </table>
     
               <div class="search_box" style="border: 1px solid black; width:1100px; margin:auto;" >
@@ -117,10 +117,10 @@
                 </c:if>
             
                 <!-- 1페이지 이전으로 이동 -->
-                <c:if test="${Page != 1}">
+                <c:if test="${page != 1}">
                     <a href="../notice/notice_list?page=${Page-1}&sel=${sel}&sword=${sword}" style="color:#000;"> < </a>
                 </c:if>
-                <c:if test="${Page == 1}">
+                <c:if test="${page == 1}">
                     <a href="#"> < </a>
                 </c:if>
 

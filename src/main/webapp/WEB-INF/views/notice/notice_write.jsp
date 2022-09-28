@@ -55,7 +55,7 @@
 </script>
 </head>
 <body>
-   <form method="post" action="notice_write_ok">
+   <form method="post" enctype="multipart/form-data" action="notice_write_ok">
      <table width="600" align="center">
      <tr>
        <td> 제목 </td>

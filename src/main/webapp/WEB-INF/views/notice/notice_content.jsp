@@ -32,11 +32,11 @@
                 <td colspan="2">${nvo.content}</td>
             </tr>
 
-            //수정 삭제 버튼
             <tr>
                 <td colspan="2">
                     <input type="button" value="수정" onclick="location.href='notice_update?id=${nvo.id}'">
                     <input type="button" value="삭제" onclick="location.href='notice_delete?id=${nvo.id}'">
+                    <a href="notice_update?id=${nvo.id}"> 수정 </a>
                 </td>
 
             

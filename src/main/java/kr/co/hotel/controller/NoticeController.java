@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.hotel.service.NoticeService;
+import kr.co.hotel.vo.NoticeVO;
 
 @Controller
 public class NoticeController {
@@ -43,7 +44,7 @@ public class NoticeController {
 	}
 	@RequestMapping("/notice/notice_write_ok")
 	public String notice_write_ok(HttpServletRequest request) {
-
+         System.out.println(request);
 		return service.notice_write_ok(request);
 	}
 	@RequestMapping("/notice/notice_delete")
@@ -57,9 +58,9 @@ public class NoticeController {
 		return service.notice_update(request,model);
 	}
 	@RequestMapping("/notice/notice_update_ok")
-	public String notice_update_ok(HttpServletRequest request) {
+	public String notice_update_ok(NoticeVO nvo) {
 
-		return service.notice_update_ok(request);
+		return service.notice_update_ok(nvo);
 	}
 	
 }

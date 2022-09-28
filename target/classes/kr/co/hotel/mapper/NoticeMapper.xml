@@ -21,8 +21,8 @@
   </select>
 
   <insert id="notice_write_ok" parameterType="kr.co.hotel.vo.NoticeVO">
-    insert into notice(title,content,fname,state,writeday)
-    values(#{title},#{content},#{fname},#{state},now())
+    insert into notice(title,content,writeday,fname,state)
+    values(#{title},#{content},now(),#{fname},#{state})
   </insert>
   <delete id="notice_delete">
     delete from notice where id=#{param1}
